@@ -1,13 +1,226 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	background-color: #fafafa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	min-height: 100vh;
+	padding-top: 10px;
+	border-style: solid;
+	border-left: 1px;
+	border-top: 1px;
+	border-bottom: 1px;
+	border-color: #d7d7d7;
+}
+
+.sidebar-btn {
+	display: flex;
+	gap: 20px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.sidebar-text {
+	font-weight: lighter;
+}
+
+.sidebar-profile {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin-left: 3px;
+	object-fit: cover;
+}
+
+.logo {
+	display: flex;
+	align-self: start;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	max-height: 40px;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.icons {
+	font-size: 24px;
+	width: 30px;
+}
+
+.home-page {
+	padding-left: 240px;
+	padding-top: 50px;
+}
+
+.stories {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	gap: 20px;
+}
+
+.stories-profile {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.stories-white {
+	width: 64px;
+	height: 64px;
+	position: relative;
+	background: white;
+	padding: 2px;
+	border-radius: 50%;
+}
+
+.stories-color {
+	width: 68px;
+	height: 68px;
+	position: relative;
+	background: linear-gradient(45deg, gold, fuchsia);
+	padding: 2px;
+	border-radius: 50%;
+}
+
+.stories-text {
+	margin-top: 7px;
+	font-size: 12px;
+}
+
+.posts {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: 50px;
+}
+
+.posts-profile {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.posts-text {
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+.posts-more {
+	padding-top: 10px;
+	padding-left: 20px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.posts-media {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	max-width: 100%;
+	max-height: 600px;
+}
+
+.posts-icon {
+	font-size: 24px;
+	padding-right: 15px;
+	cursor: pointer;
+}
+
+.posts-save {
+	padding-left: 25px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.posts-like {
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+.posts-caption {
+	padding-top: 10px;
+	font-size: 14px;
+}
+
+.posts-comment {
+	padding-top: 5px;
+	font-size: 14px;
+}
+
+.posts-input-comment {
+	padding-top: 5px;
+	font-size: 14px;
+	border: 0;
+}
+
+.profile-username {
+	padding-top: 5px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+.profile-text {
+	font-size: 14px;
+	color: #999999;
+}
+
+.profile-blue {
+	padding-top: 10px;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #00adff;
+}
+
+.profile-grey {
+	padding-top: 15px;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #999999;
+}
+
+.profile-dark {
+	padding-top: 15px;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #2e2e2e;
+}
+
+.suggestions {
+	padding-top: 10px;
+}
+
+.suggestions-profile {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.suggestions-username {
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+.suggestions-text {
+	font-size: 12px;
+	color: #999999;
+}
+
+.suggestions-blue {
+	padding-top: 10px;
+	margin-left: 20px;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #00adff;
+}
+
+.terms-text {
+	font-size: 12px;
+	color: #bcbcbc;
 }
