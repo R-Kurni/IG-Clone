@@ -11,13 +11,48 @@ import {
 	faHeart,
 	faPaperPlane,
 } from "@fortawesome/free-regular-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchComments } from "../store/actions/actionCreator.js";
+import Comment from "../components/Comment.jsx";
+import axios from "axios";
 
 export default function Post({ post }) {
+	const dispatch = useDispatch();
+	const { comments } = useSelector((state) => {
+		return state.comments;
+	});
 	const [isLiked, setIsLiked] = useState(false);
 	const [isSaved, setIsSaved] = useState(false);
 	const counter = post.like;
 	const [likeCounter, setLikeCounter] = useState(counter);
+	const id = post.id;
+	useEffect(() => {
+		dispatch(fetchComments());
+	}, []);
+	// useEffect(() => {
+	// 	dispatch(fetchComments(id));
+	// }, []);
+	// async function fetchComments() {
+	// 	try {
+	// 		const options = {
+	// 			method: "GET",
+	// 			url: "http://localhost:3000/comments",
+	// 		};
+	// 		if (typeof id !== "undefined") {
+	// 			options.params = {
+	// 				id: id,
+	// 			};
+	// 		}
+	// 		const { data } = await axios(options);
+	// 		console.log(data);
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// }
+	// useEffect(() => {
+	// 	fetchComments();
+	// }, []);
 	return (
 		<>
 			<Container style={{ width: "400px" }}>
@@ -93,9 +128,9 @@ export default function Post({ post }) {
 					</div>
 				</Row>
 				<Row>
-					<div className="posts-comment">
-						<b>robby</b> Awesome!
-					</div>
+					{comments?.map((comment) => {
+						return <Comment comment={comment} key={comment.id} />;
+					})}
 				</Row>
 				<Row>
 					<input

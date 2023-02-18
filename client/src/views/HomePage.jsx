@@ -7,15 +7,15 @@ import { fetchUsers, fetchPosts } from "../store/actions/actionCreator.js";
 
 export default function HomePage() {
 	const dispatch = useDispatch();
-	// const { users } = useSelector((state) => {
-	// 	return state.users;
-	// });
+	const { users } = useSelector((state) => {
+		return state.users;
+	});
 	const { posts } = useSelector((state) => {
 		return state.posts;
 	});
-	// useEffect(() => {
-	// 	dispatch(fetchUsers());
-	// }, []);
+	useEffect(() => {
+		dispatch(fetchUsers());
+	}, []);
 	useEffect(() => {
 		dispatch(fetchPosts());
 	}, []);
@@ -26,8 +26,8 @@ export default function HomePage() {
 					<Col lg={8}>
 						<Row>
 							<div className="stories">
-								{posts.map((post) => {
-									return <Story post={post} key={post.id} />;
+								{users.map((user) => {
+									return <Story user={user} key={user.id} />;
 								})}
 							</div>
 						</Row>
