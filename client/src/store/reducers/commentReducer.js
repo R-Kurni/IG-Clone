@@ -6,7 +6,7 @@ const initialState = {
 
 function commentReducer(state = initialState, action) {
 	switch (action.type) {
-		case FETCH_COMMENTS_SUCCESS:
+		case "comments/fetchSuccess":
 			return {
 				...state,
 				comments: action.payload,

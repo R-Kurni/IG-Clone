@@ -6,7 +6,7 @@ const initialState = {
 
 function postReducer(state = initialState, action) {
 	switch (action.type) {
-		case FETCH_POSTS_SUCCESS:
+		case "posts/fetchSuccess":
 			return {
 				...state,
 				posts: action.payload,

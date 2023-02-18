@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const fetchUsersSuccess = (data) => {
 	return {
-		type: FETCH_USERS_SUCCESS,
+		type: "users/fetchSuccess",
 		payload: data,
 	};
 };
@@ -15,7 +15,8 @@ export const fetchUsers = () => {
 		try {
 			const options = {
 				method: "GET",
-				url: "http://localhost:3000/users",
+				// url: "http://localhost:3000/users",
+				url: "https://private-e1e01-igclone1.apiary-mock.com/users",
 			};
 			const { data } = await axios(options);
 			console.log(data);
@@ -28,7 +29,7 @@ export const fetchUsers = () => {
 
 export const fetchPostsSuccess = (data) => {
 	return {
-		type: FETCH_POSTS_SUCCESS,
+		type: "posts/fetchSuccess",
 		payload: data,
 	};
 };
@@ -38,7 +39,8 @@ export const fetchPosts = () => {
 		try {
 			const options = {
 				method: "GET",
-				url: "http://localhost:3000/posts",
+				// url: "http://localhost:3000/posts",
+				url: "https://private-e1e01-igclone1.apiary-mock.com/posts",
 			};
 			const { data } = await axios(options);
 			console.log(data);
@@ -51,23 +53,19 @@ export const fetchPosts = () => {
 
 export const fetchCommentsSuccess = (data) => {
 	return {
-		type: FETCH_COMMENTS_SUCCESS,
+		type: "comments/fetchSuccess",
 		payload: data,
 	};
 };
 
-export const fetchComments = (userInput) => {
+export const fetchComments = () => {
 	return async (dispatch) => {
 		try {
 			const options = {
 				method: "GET",
-				url: "http://localhost:3000/comments",
+				// url: "http://localhost:3000/comments",
+				url: "https://private-e1e01-igclone1.apiary-mock.com/comments",
 			};
-			if (typeof userInput !== "undefined") {
-				options.params = {
-					id: userInput.id,
-				};
-			}
 			const { data } = await axios(options);
 			console.log(data);
 			dispatch(fetchCommentsSuccess(data));
@@ -76,3 +74,24 @@ export const fetchComments = (userInput) => {
 		}
 	};
 };
+
+// export const fetchComments = (id) => {
+// 	return async (dispatch) => {
+// 		try {
+// 			const options = {
+// 				method: "GET",
+// 				url: "http://localhost:3000/comments",
+// 			};
+// 			if (typeof id !== "undefined") {
+// 				options.params = {
+// 					id: id,
+// 				};
+// 			}
+// 			const { data } = await axios(options);
+// 			console.log(data);
+// 			dispatch(fetchCommentsSuccess(data));
+// 		} catch (error) {
+// 			console.log(error);
+// 		}
+// 	};
+// };
